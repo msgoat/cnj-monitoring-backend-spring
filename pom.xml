@@ -6,7 +6,7 @@
     <artifactId>cnj-monitoring-backend-spring</artifactId>
     <version>${revision}${changelist}${sha1}</version>
     <packaging>jar</packaging>
-    <description>Cloud native Java backend using Micrometer for monitoring based on Spring Boot</description>
+    <description>Cloud native Java backend using MicroProfile Metrics for monitoring based on Spring Boot</description>
     <properties>
         <!-- new Maven version management -->
         <revision>5.1.0</revision>
@@ -163,7 +163,7 @@
         <dependency>
             <groupId>group.msg.at.cloud.common</groupId>
             <artifactId>cnj-common-observability-spring</artifactId>
-            <version>0.2.0</version>
+            <version>0.2.1</version>
         </dependency>
         <!-- showcase specific section -->
         <dependency>
