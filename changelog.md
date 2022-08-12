@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.4.0] - 2022-06-30
+### Changed
+- upgraded to cnj-common-observability-spring 0.4.0 to have consolidated Undertow metric names
+- name of Spring Boot application JAR is using suffix `-spring` now
 
 ## [5.3.0] - 2022-06-30
 ### Added
