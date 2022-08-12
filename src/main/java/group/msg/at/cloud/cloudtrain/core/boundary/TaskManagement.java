@@ -34,37 +34,37 @@ public class TaskManagement {
     private UserPermissionVerifier verifier;
 
     @NotNull
-    @Counted(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_add"})
-    @Timed(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_add"})
+    @Counted(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_add"})
+    @Timed(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_add"})
     public UUID addTask(@NotNull @Valid Task newTask) {
         verifier.requirePermission("TASK_CREATE");
         Task saved = this.repository.saveAndFlush(newTask);
         return saved.getId();
     }
 
-    @Counted(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_modify"})
-    @Timed(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_modify"})
+    @Counted(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_modify"})
+    @Timed(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_modify"})
     public void modifyTask(@NotNull @Valid Task modifiedTask) {
         verifier.requirePermission("TASK_UPDATE");
         this.repository.save(modifiedTask);
     }
 
-    @Counted(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_get"})
-    @Timed(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_get"})
+    @Counted(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_get"})
+    @Timed(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_get"})
     public Optional<Task> getTaskById(@NotNull UUID taskId) {
         verifier.requirePermission("TASK_READ");
         return this.repository.findById(taskId);
     }
 
-    @Counted(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_delete"})
-    @Timed(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_delete"})
+    @Counted(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_delete"})
+    @Timed(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_delete"})
     public void removeTask(@NotNull UUID taskId) {
         verifier.requirePermission("TASK_DELETE");
         this.repository.deleteById(taskId);
     }
 
-    @Counted(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_browse"})
-    @Timed(value = BUSINESS_OPERATION_METRIC_PREFIX, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_browse"})
+    @Counted(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_browse"})
+    @Timed(value = BUSINESS_OPERATION_METRIC_NAME, extraTags = {BUSINESS_OPERATION_NAME_TAG, "task_browse"})
     public List<Task> getAllTasks() {
         verifier.requirePermission("TASK_READ");
         return this.repository.findAll();

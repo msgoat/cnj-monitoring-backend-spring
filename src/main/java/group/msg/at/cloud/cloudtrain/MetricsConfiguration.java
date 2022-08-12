@@ -16,7 +16,7 @@ public class MetricsConfiguration {
     /**
      * Name prefix for all metrics related to business operation invocations.
      */
-    public static final String BUSINESS_OPERATION_METRIC_PREFIX = "business_operation";
+    public static final String BUSINESS_OPERATION_METRIC_NAME = "application_business_operation";
 
     /**
      * Extra metric tag specifying the business operation's name.
