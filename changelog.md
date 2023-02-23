@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [6.0.0] - 2023-02-23
+### Changed
+- upgraded to Java 17
+- upgraded to Spring Boot 3.0.2
+- consolidated with hello world use case
+- upgraded all cnj-common-* dependencies
+- moved to new build pipeline on AWS
+
 ## [5.4.0] - 2022-08-12
 ### Changed
 - consolidated application-specific prometheus metric names with other showcases

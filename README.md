@@ -4,7 +4,7 @@ Cloud native Spring Boot backend with support of cluster monitoring using MicroM
 
 ## Status
 
-![Build status](https://drone.cloudtrain.aws.msgoat.eu/api/badges/msgoat/cnj-monitoring-backend-spring/status.svg)
+![Build status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiSkhtMlBJVXVlNDgycy9vdlpzczF5aVpyN0N4NGFlaERGTjNoa2NVUlNtYlhBYjFpWUE2b29ab2JDcnVJeDVQVldOZTkyQmIyaEFFVkpydm04bUhFc2ZzPSIsIml2UGFyYW1ldGVyU3BlYyI6Im01N0JBQ3A3OVZBWGMrSkwiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
 
 ## Release information
 
