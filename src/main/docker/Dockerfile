@@ -13,7 +13,7 @@ ENV JAVA_APPLICATION=${ARG_JAVA_APPLICATION} \
     JAVA_OPTS="-XshowSettings:vm -XX:+DisableExplicitGC -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled" \
     EXT_JAVA_OPTS="" \
     AGENT_JAVA_OPTS="" \
-    DOCKER_JAVA_OPTS="-XX:InitialRAMPercentage=75.0 -XX:MaxRAMPercentage=75.0" \
+    DOCKER_JAVA_OPTS="-XX:+UseContainerSupport -XX:InitialRAMPercentage=75.0 -XX:MaxRAMPercentage=75.0" \
     SPRING_JAVA_OPTS="" \
     SPRING_ARGUMENTS="" \
     SPRING_PROFILES_ACTIVE="default" \
