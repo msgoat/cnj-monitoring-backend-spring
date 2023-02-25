@@ -97,10 +97,10 @@ downstream:
 persistence:
   postgres:
     database: cloudtrain
-    host: cnj-monitoring-resources-postgresql
+    host: pg-eu-west-1-cloudtrain-dev-train2023.ckztcqgxbl5t.eu-west-1.rds.amazonaws.com
     port: 5432
     secret:
-      name: cnj-monitoring-resources-postgres
+      name: pg-eu-west-1-cloudtrain-dev-train2023
       keys:
         user: postgresql-user
         password: postgresql-password
