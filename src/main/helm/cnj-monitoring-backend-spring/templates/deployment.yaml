@@ -57,7 +57,10 @@ spec:
             - name: CLOUDTRAIN_SERVICES_DOWNSTREAM_URL
               value: {{ .Values.downstream.rest.url | quote }}
             - name: POSTGRES_DB_USER
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.persistence.postgres.secret.name }}
+                  key: {{ .Values.persistence.postgres.secret.keys.username }}
             - name: POSTGRES_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
