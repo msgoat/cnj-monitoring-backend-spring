@@ -102,8 +102,8 @@ persistence:
     secret:
       name: cnj-monitoring-resources-postgres
       keys:
-        user: user
-        password: password
+        user: postgresql-user
+        password: postgresql-password
 
 # metrics configuration
 metrics:
