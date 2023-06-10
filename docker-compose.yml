@@ -18,6 +18,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
 
   downstream:
     image: docker.cloudtrain.aws.msgoat.eu/cloudtrain/cnj-monitoring-downstream:latest
@@ -27,12 +29,10 @@ services:
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: https://oidc.cloudtrain.aws.msgoat.eu/realms/cloudtrain
 
   backend:
-    image: ${docker.image.name}:${project.version}
+    image: docker.cloudtrain.aws.msgoat.eu/cloudtrain/cnj-monitoring-backend-spring:latest
     ports:
-      - "38080:8080"
-      - "38089:8089"
+      - "38100:8080"
     environment:
-      AGENT_JAVA_OPTS: "-javaagent:/home/spring/org.jacoco.agent.jar=output=tcpserver,address=*,port=8089"
       DOCKER_JAVA_OPTS: "-Xms1g -Xmx1g"
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI: https://oidc.cloudtrain.aws.msgoat.eu/realms/cloudtrain/protocol/openid-connect/certs
       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: https://oidc.cloudtrain.aws.msgoat.eu/realms/cloudtrain
@@ -48,8 +48,11 @@ services:
       postgres:
         condition: service_healthy
 
+volumes:
+
+  postgres-data:
 
 
 
 
-  
+

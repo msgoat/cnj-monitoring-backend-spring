@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.0.0] - 2023-06-09
+### Changed
+- moved to new AWS CodeBuild build pipeline
+- moved to new CloudTrain EKS cluster
+- upgraded everything
+- added docker-compose.yml to run the showcase locally
+
 ## [6.0.0] - 2023-02-23
 ### Changed
 - upgraded to Java 17
