@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.1.0] - 2023-11-14
+### Added
+- Tagging of git branch
+### Changed
+- Upgraded to helm-maven-plugin version 5.0.0
+- Now a helm chart is packaged and pushed as an artifact during the commit-stage build
+- Now the helm chart is pulled before deploying during the integration-test-stage build
+
 ## [7.0.0] - 2023-06-09
 ### Changed
 - moved to new AWS CodeBuild build pipeline
