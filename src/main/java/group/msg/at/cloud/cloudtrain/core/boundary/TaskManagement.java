@@ -5,19 +5,20 @@ import group.msg.at.cloud.cloudtrain.core.control.UserPermissionVerifier;
 import group.msg.at.cloud.cloudtrain.core.entity.Task;
 import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import static group.msg.at.cloud.cloudtrain.MetricsConfiguration.*;
+import static group.msg.at.cloud.cloudtrain.MetricsConfiguration.BUSINESS_OPERATION_METRIC_NAME;
+import static group.msg.at.cloud.cloudtrain.MetricsConfiguration.BUSINESS_OPERATION_NAME_TAG;
 
 /**
  * Simple {@code Boundary} that manages {@code Task} entities.
